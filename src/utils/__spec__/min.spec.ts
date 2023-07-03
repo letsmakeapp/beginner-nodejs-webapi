@@ -1,13 +1,13 @@
-import { Min } from '../Min';
+import { min } from '../min';
 
-describe('Min', () => {
+describe('min', () => {
 	it('should return the smaller of two numbers', () => {
 		// Arrange
 		const a = 1;
 		const b = 2;
 
 		// Act
-		const output = Min(a, b);
+		const output = min(a, b);
 
 		// Assert
 		expect(output).toEqual(1);

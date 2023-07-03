@@ -1,6 +1,6 @@
-import { ITodoRepository } from '../../database/Abstract';
+import { ITodoRepository } from '../../database/abstract';
 import { Todo } from '../../domain/todo';
-import { AddTodo } from '../AddTodo';
+import { AddTodo } from '../add-todo';
 
 describe('AddTodo', () => {
 	describe('execute', () => {

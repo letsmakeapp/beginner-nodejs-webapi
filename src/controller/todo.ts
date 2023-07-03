@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Req } from 'routing-controllers';
 import { Request } from 'express';
-import { IUseCase } from '../usecase/Abstract';
-import { AddTodoInput, AddTodoOutput } from '../usecase/AddTodo';
+import { IUseCase } from '../usecase/abstract';
+import { AddTodoInput, AddTodoOutput } from '../usecase/add-todo';
 
 type TodoViewModel = {
 	id: string;

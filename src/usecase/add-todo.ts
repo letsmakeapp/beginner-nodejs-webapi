@@ -1,6 +1,6 @@
-import { ITodoRepository } from '~database/Abstract';
+import { ITodoRepository } from '~database/abstract';
 import { Todo } from '~domain/todo';
-import { IUseCase } from './Abstract';
+import { IUseCase } from './abstract';
 
 export type AddTodoInput = {
 	userId: string;
