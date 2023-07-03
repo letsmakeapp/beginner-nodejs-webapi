@@ -1,0 +1,11 @@
+{
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "[typescript][javascript]": {
+        "editor.tabSize": 2,
+        "editor.semanticHighlighting.enabled": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true
+        },
+    }
+}
