@@ -4,7 +4,7 @@ export type ConfigurationValue = Readonly<{
 
 export class Configuration {
 	static read(): Readonly<ConfigurationValue> {
-		const port = Number(process.env.PORT) ?? 3000;
+		const port = Number(process.env.PORT ?? '3000');
 		return {
 			port,
 		};

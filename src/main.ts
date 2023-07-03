@@ -4,7 +4,7 @@ import express from 'express';
 import { useExpressServer } from 'routing-controllers';
 
 import { TodoController } from '~controller/todo';
-import { Configuration } from './configuration/reader';
+import { Configuration } from '~configuration/reader';
 
 async function main(): Promise<void> {
 	const config = Configuration.read();
