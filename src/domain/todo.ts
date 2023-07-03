@@ -1,6 +1,6 @@
 export class Todo {
 	private constructor(
-		private readonly _id: string | null,
+		private _id: string | null,
 		private readonly _title: string,
 		private readonly _isDone: boolean,
 		private _dueDate: Date | null,
@@ -35,6 +35,10 @@ export class Todo {
 	changeDueDate(date: Date | null): void {
 		this._dueDate = date;
 		this._updatedAt = new Date();
+	}
+
+	dangerouslySetId(id: string): void {
+		this._id = id;
 	}
 
 	public static createNew(title: string, dueDate: Date | null): Todo {
