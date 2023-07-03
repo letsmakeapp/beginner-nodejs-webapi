@@ -3,7 +3,6 @@ import { Todo } from '~domain/todo';
 import { IUseCase } from './abstract';
 
 export type AddTodoInput = {
-	userId: string;
 	title: string;
 	dueDate: Date | null;
 };
