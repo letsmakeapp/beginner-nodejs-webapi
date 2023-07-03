@@ -4,6 +4,18 @@ import { AddTodo } from '../AddTodo';
 
 describe('AddTodo', () => {
 	describe('execute', () => {
+		const FROZEN_TIME = new Date('2023-07-03T17:21:13.327Z');
+
+		beforeAll(() => {
+			jest.useFakeTimers({
+				now: FROZEN_TIME,
+			});
+		});
+
+		afterAll(() => {
+			jest.useRealTimers();
+		});
+
 		it('it should save to database correctly', async () => {
 			// Arrange
 			const mockRepoCreate = jest.fn().mockImplementation(async (todo: Todo): Promise<void> => {
@@ -22,7 +34,17 @@ describe('AddTodo', () => {
 
 			// Assert
 			expect(output.todoId).toEqual('testing-todo-id');
-			expect(mockRepoCreate).toBeCalledTimes(1);
+			expect(mockRepoCreate).toBeCalledWith(
+				expect.objectContaining({
+					// FIXME: we cannot test the id because jest did capture the argument by reference.
+					// id: null,
+					title: 'testing-title',
+					isDone: false,
+					dueDate: new Date('2023-07-03T17:21:13.327Z'),
+					createdAt: FROZEN_TIME,
+					updatedAt: FROZEN_TIME,
+				}),
+			);
 		});
 	});
 });
